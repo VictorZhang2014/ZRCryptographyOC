@@ -1,6 +1,10 @@
 # ZRCryptographyOC
 ZRCryptographyOC, a set of cryptographic methods which provides an easily way to call. It includes RSA,AES,DES,MD5,SHA1,SHA224,SHA384,SHA512 algorithms.
 
+[![Version](https://img.shields.io/cocoapods/v/ZRCryptographyOC.svg?style=flat)](http://cocoapods.org/pods/ZRCryptographyOC)
+[![License](https://img.shields.io/cocoapods/l/ZRCryptographyOC.svg?style=flat)](http://cocoapods.org/pods/ZRCryptographyOC)
+[![Platform](https://img.shields.io/cocoapods/p/ZRCryptographyOC.svg?style=flat)](http://cocoapods.org/pods/ZRCryptographyOC)
+
 ## How to get started?
 -----------------------------------
 - [Download ZRCryptographyOC](https://github.com/VictorZhang2014/ZRCryptographyOC) try the example app out
