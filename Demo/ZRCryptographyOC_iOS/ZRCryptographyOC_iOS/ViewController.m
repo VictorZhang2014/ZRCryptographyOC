@@ -1,48 +1,65 @@
-# ZRCryptographyOC
-ZRCryptographyOC, a set of cryptographic methods which provides an easily way to call. It includes RSA,AES,DES,MD5,SHA1,SHA224,SHA384,SHA512 algorithms.
+//
+//  ViewController.m
+//  ZRCryptographyOC_iOS
+//
+//  Created by VictorZhang on 01/04/2017.
+//  Copyright © 2017 Victor Studio. All rights reserved.
+//
 
-## How to get started?
------------------------------------
-- [Download ZRCryptographyOC](https://github.com/VictorZhang2014/ZRCryptographyOC) try the example app out
-
-## Installation
------------------------------------
-[CocoaPods](http://cocoapods.org) is a dependency manager for Objective-C , which anutomates and simplifies the process of using 3rd-party libraries like ZRCryptographyOC in you projects.
-
-```bash
-$ gem install cocoapods
-```
-
-#### podfile
-To integrate ZRCryptographyOC into your Xcode project using Cocoapods, specify it in your `Podfile`:
-
-```ruby
-platform :ios, '7.0'
-
-target 'Your project Name' do
-  pod 'ZRCryptographyOC' , '~>1.1.2'
-
-end
-```
-Then, run the following command:
-
-```bash
-$ pod install
-```
+#import "ViewController.h"
+#import <ZRCryptographyOC/ZRCryptographyOC.h>
 
 
-## Usage
-----------------------------------
-First of all, your must import the header file of `#import <ZRCryptographyOC/ZRCryptographyOC.h>`
 
-#### RSA encrypt and decrypt
-```
+//RSA Cryptography
+void TestRSACryptography();
+
+//AES
+void TestAESCryptography();
+
+//DES
+void TestDESCryptography();
+
+//MD5
+void TestMD5();
+
+//SHA1,SHA224,SHA256,SHA384,SHA512
+void TestSHAAlgorithm();
+
+@interface ViewController ()
+
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+    
+    //    TestRSACryptography();
+    
+    //    TestAESCryptography();
+    
+    //    TestDESCryptography();
+    
+    //    TestMD5();
+    
+    TestSHAAlgorithm();
+    
+}
+
+
+
+
+
+/**************** START    ----      RSA Cryptography  ****************/
 NSString * EncryptoString(NSString *inputStr)
 {
     ZRCryptographyOC *rsa = [[ZRCryptographyOC alloc] init];
     
     //Load your public Key file
-    [rsa loadPublicKeyFromFile:@"/Your bundle path/public_key.der"];
+    [rsa loadPublicKeyFromFile:@"/Users/VictorZhang/Desktop/RSA/public_key.der"];
     
     //encrypt
     return [rsa rsaEncryptString:inputStr];
@@ -53,7 +70,7 @@ NSString *DecryptoString(NSString *secureText)
     ZRCryptographyOC *rsa = [[ZRCryptographyOC alloc] init];
     
     //Load your private key file
-    [rsa loadPrivateKeyFromFile:@"/Your bundle path/private_key.p12" password:@"123456"];
+    [rsa loadPrivateKeyFromFile:@"/Users/VictorZhang/Desktop/RSA/private_key.p12" password:@"123456"];
     
     //decrypt
     return [rsa rsaDecryptString:secureText];
@@ -73,11 +90,14 @@ void TestRSACryptography()
     NSString *decryptStr = DecryptoString(secureHello);
     NSLog(@"Decrypted Data: %@", decryptStr);
 }
-```
+/**************** END    ----      RSA Cryptography  ****************/
 
 
-#### AES encrypt and decrypt
-```
+
+
+
+
+/**************** START    ----      AES Cryptography  ****************/
 void TestAESCryptography()
 {
     NSLog(@"\n\n\n\n\n");
@@ -94,11 +114,14 @@ void TestAESCryptography()
     NSString *plainText = [aes AES256Decrypt:key undecryptedStr:encryptedData];
     NSLog(@"plainText = %@", plainText);
 }
-```
+/**************** END    ----      AES Cryptography  ****************/
 
 
-#### DES encrypt and decrypt
-```
+
+
+
+
+/**************** START    ----    DES Cryptography  ****************/
 void TestDESCryptography()
 {
     NSLog(@"\n\n\n\n\n");
@@ -115,11 +138,14 @@ void TestDESCryptography()
     NSString *plainText = [des DESDecrypt:key undecryptedStr:encryptedData];
     NSLog(@"plainText = %@", plainText);
 }
-```
+/**************** END    ----      DES Cryptography  ****************/
 
 
-#### MD5 encrypt and decrypt
-```
+
+
+
+
+/**************** START    ----    MD5 Cryptography  ****************/
 void TestMD5()
 {
     NSLog(@"\n\n\n\n\n");
@@ -130,11 +156,14 @@ void TestMD5()
     NSString *cipherStr = [md5 MD5:unencryptedStr];
     NSLog(@"md5 cipherstr = %@", cipherStr);
 }
-```
+/**************** END    ----      MD5 Cryptography  ****************/
 
 
-#### SHA serials algorithms encrypt and decrypt
-```
+
+
+
+
+/**************** START    ----    SHA1,SHA224,SHA256,SHA384,SHA512 Cryptography  ****************/
 void TestSHAAlgorithm()
 {
     NSString * unencryptedStr = @"Hello, world! I am an SHA Serials Algorithms Cryptography, if you wanna use it to your project, it's very easy !";
@@ -150,7 +179,8 @@ void TestSHAAlgorithm()
     NSLog(@" \n SHA1=%@ \n SHA224=%@ \n SHA256=%@ \n SHA384=%@ \n SHA512=%@", SHA1, SHA224, SHA256, SHA384, SHA512);
     
 }
-```
+/**************** END    ----      SHA1,SHA224,SHA256,SHA384,SHA512 Cryptography  ****************/
 
-## Licenses
-ZRCryptographyOC is licensed under the [MIT License](https://github.com/VictorZhang2014/ZRCryptographyOC/blob/master/LICENSE).
+
+
+@end
