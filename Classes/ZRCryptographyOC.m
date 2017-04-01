@@ -168,9 +168,8 @@ const Byte DES_IV[] = {1,2,3,4,5,6,7,8};
         }
         
         size_t outlen = block_size;
-        OSStatus status = noErr;
-        status = SecKeyDecrypt(keyRef, kSecPaddingNone, srcbuf + idx, data_len, outbuf, &outlen);
-        if (status != 0) {
+        OSStatus status = SecKeyDecrypt(keyRef, kSecPaddingNone, srcbuf + idx, data_len, outbuf, &outlen);
+        if (status == noErr) {
             NSLog(@"SecKeyEncrypt fail. Error Code: %d", status);
             ret = nil;
             break;
