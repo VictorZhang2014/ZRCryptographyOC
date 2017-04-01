@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90784D0E1E8E72DB00F6E9D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90784D0D1E8E72DB00F6E9D6 /* main.m */; };
+		90D5D9DF1E8F634000E4536D /* ZRCryptographyOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D5D9DE1E8F634000E4536D /* ZRCryptographyOC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		90784D0A1E8E72DB00F6E9D6 /* ZRCryptographyOC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ZRCryptographyOC; sourceTree = BUILT_PRODUCTS_DIR; };
 		90784D0D1E8E72DB00F6E9D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		90D5D9DD1E8F634000E4536D /* ZRCryptographyOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZRCryptographyOC.h; sourceTree = "<group>"; };
+		90D5D9DE1E8F634000E4536D /* ZRCryptographyOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZRCryptographyOC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +60,19 @@
 		90784D0C1E8E72DB00F6E9D6 /* ZRCryptographyOC */ = {
 			isa = PBXGroup;
 			children = (
+				90D5D9DC1E8F634000E4536D /* Classes */,
 				90784D0D1E8E72DB00F6E9D6 /* main.m */,
 			);
 			path = ZRCryptographyOC;
+			sourceTree = "<group>";
+		};
+		90D5D9DC1E8F634000E4536D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				90D5D9DD1E8F634000E4536D /* ZRCryptographyOC.h */,
+				90D5D9DE1E8F634000E4536D /* ZRCryptographyOC.m */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90784D0E1E8E72DB00F6E9D6 /* main.m in Sources */,
+				90D5D9DF1E8F634000E4536D /* ZRCryptographyOC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
