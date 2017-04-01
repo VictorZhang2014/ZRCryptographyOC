@@ -168,12 +168,8 @@ const Byte DES_IV[] = {1,2,3,4,5,6,7,8};
         }
         
         size_t outlen = block_size;
-        OSStatus status = (SInt32)SecKeyDecrypt(keyRef, kSecPaddingNone, srcbuf + idx, data_len, outbuf, &outlen);
+        OSStatus status = SecKeyDecrypt(keyRef, kSecPaddingNone, srcbuf + idx, data_len, outbuf, &outlen);
         if (status == noErr) {
-            NSLog(@"SecKeyEncrypt fail. Error Code: %d", status);
-            ret = nil;
-            break;
-        }else{
             //the actual decrypted data is in the middle, locate it!
             int idxFirstZero = -1;
             int idxNextZero = (int)outlen;
@@ -188,6 +184,10 @@ const Byte DES_IV[] = {1,2,3,4,5,6,7,8};
                 }
             }
             [ret appendBytes:&outbuf[idxFirstZero+1] length:idxNextZero-idxFirstZero-1];
+        } else {
+            if (outbuf)
+                free(outbuf);
+            return nil;
         }
     }
     if (outbuf)
